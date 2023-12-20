@@ -1,0 +1,281 @@
+{
+  "cakes": [
+    {
+      "name": "Black Forest",
+      "description": "Available",
+      "price": 800,
+      "id": 1
+    },
+    {
+      "name": "Pine apple",
+      "description": "Pine apple",
+      "price": 1000,
+      "id": 2
+    },
+    {
+      "name": "Rainbow",
+      "description": "Available",
+      "price": 500,
+      "id": 3
+    },
+    {
+      "name": "Chocolate fudge",
+      "description": "Chocolate fudge",
+      "price": 500,
+      "id": 4
+    },
+    {
+      "name": "Strawberry",
+      "description": "Available",
+      "price": 850,
+      "id": 5
+    }
+  ],
+  "user": [
+    {
+      "username": "Administrator",
+      "lastName": "",
+      "password": "Admin@123",
+      "confirmPassword": "Admin@123",
+      "gender": "Female",
+      "age": "24",
+      "email": "admin@gmail.com",
+      "phone": "9738416898",
+      "address": {
+        "street": "2903 sixth cross rp road",
+        "city": "Mysore",
+        "state": "Karnataka",
+        "zipCode": "571301"
+      },
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "username": "Abhi",
+      "email": "abhi@gmail.com",
+      "password": "abhi@123",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "firstName": "",
+      "email": "",
+      "password": "",
+      "role": "user",
+      "lastName": "",
+      "confirmPassword": "",
+      "gender": "",
+      "age": 0,
+      "phone": "",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "zipCode": ""
+      },
+      "id": 3
+    },
+    {
+      "username": "Kanchana",
+      "lastName": "",
+      "password": "Kanchana@123",
+      "confirmPassword": "Kanchana@123",
+      "gender": "2",
+      "age": "24",
+      "email": "Kanchana@gmail.com",
+      "phone": "9738416898",
+      "address": {
+        "street": "Nanjangud",
+        "city": "Mysore",
+        "state": "Karnataka",
+        "zipCode": "571301"
+      },
+      "id": 4
+    },
+    {
+      "username": "Gagan",
+      "lastName": "",
+      "password": "Gagan@123",
+      "confirmPassword": "Gagan@123",
+      "gender": "1",
+      "age": "23",
+      "email": "Gagan@gmail.com",
+      "phone": "9738416898",
+      "address": {
+        "street": "Devraj urs road",
+        "city": "Chikmagalur",
+        "state": "Karnataka",
+        "zipCode": "571301"
+      },
+      "id": 5
+    },
+    {
+      "username": "Mahesh",
+      "lastName": "Kumar",
+      "password": "Mahesh@123",
+      "confirmPassword": "Mahesh@123",
+      "gender": "2",
+      "age": "24",
+      "email": "Mahesh@gmail.com",
+      "phone": "7975988347",
+      "address": {
+        "street": "Mysore",
+        "city": "Mysore",
+        "state": "Karnataka",
+        "zipCode": "571301"
+      },
+      "id": 6
+    },
+    {
+      "username": "Mahesh",
+      "lastName": "Kumar",
+      "password": "Mahesh@123",
+      "confirmPassword": "Mahesh@123",
+      "gender": "1",
+      "age": "24",
+      "email": "Sagar@gmail.com",
+      "phone": "7975988347",
+      "address": {
+        "street": "Mysore",
+        "city": "Mysore",
+        "state": "Karnataka",
+        "zipCode": "571301"
+      },
+      "role": "user",
+      "id": 7
+    },
+    {
+      "username": "Mahesh",
+      "password": "Mahesh@123",
+      "confirmPassword": "Mahesh@123",
+      "email": "statag@gmail.com",
+      "phone": "7975988347",
+      "address": {
+        "street": "Mysore",
+        "city": "Mysore"
+      },
+      "role": "user",
+      "id": 8
+    },
+    {
+      "username": "KAnchana",
+      "password": "Mahesh@123",
+      "confirmPassword": "Mahesh@123",
+      "email": "sdhhfsdhf@gmail.com",
+      "phone": "7975988347",
+      "address": {
+        "street": "Mysore",
+        "city": "Mysore"
+      },
+      "role": "user",
+      "id": 9
+    },
+    {
+      "username": "Sonushree",
+      "password": "Sonu@123",
+      "confirmPassword": "Sonu@123",
+      "email": "Sonugowda@gmail.com",
+      "phone": "9738416898",
+      "address": {
+        "street": "Mandya",
+        "city": "Maddur"
+      },
+      "role": "user",
+      "id": 10
+    },
+    {
+      "username": "Ashwini",
+      "password": "Ashwini@123",
+      "confirmPassword": "Ashwini@123",
+      "email": "ashwini@gmail.com",
+      "phone": "7975988347",
+      "address": {
+        "street": "Sathgalli",
+        "city": "Mysore"
+      },
+      "role": "user",
+      "id": 11
+    },
+    {
+      "username": "vivek",
+      "password": "Vivek@123",
+      "confirmPassword": "Vivek@123",
+      "email": "vivek@gmail.com",
+      "phone": "8550030909",
+      "address": {
+        "street": "Bangalore",
+        "city": "Mysore"
+      },
+      "role": null,
+      "id": 12
+    },
+    {
+      "username": "Ashwini",
+      "password": "Ashwini@123",
+      "confirmPassword": "Ashwini@123",
+      "email": "ashu@gmail.com",
+      "phone": "7975988347",
+      "address": {
+        "street": "Sathgalli",
+        "city": "Mysore"
+      },
+      "role": "user",
+      "id": 13
+    },
+    {
+      "username": "Kanchana",
+      "password": "Kanchana@123",
+      "confirmPassword": "Kanchana@123",
+      "email": "kanchana.m.193@gmail.com",
+      "phone": "7975988347",
+      "address": {
+        "street": "#2903 sixth cross rp road nanjangud",
+        "city": "Mysore"
+      },
+      "role": "user",
+      "id": 14
+    }
+  ],
+  "order": [
+    {
+      "username": "Abhi",
+      "name": "Rainbow",
+      "id": 3,
+      "price": 500,
+      "quantity": 1,
+      "total": 500
+    },
+    {
+      "username": "Abhi",
+      "name": "Chocolate fudge",
+      "id": 4,
+      "price": 500,
+      "quantity": 2,
+      "total": 1000
+    },
+    {
+      "username": "Kanchana",
+      "name": "Strawberry",
+      "id": 5,
+      "price": 850,
+      "quantity": 2,
+      "total": 1700
+    },
+    {
+      "username": "Abhi",
+      "name": "Black Forest",
+      "id": 1,
+      "price": 800,
+      "quantity": 1,
+      "total": 800
+    },
+    {
+      "username": "Kanchana",
+      "name": "Pine apple",
+      "id": 2,
+      "price": 1000,
+      "quantity": 1,
+      "total": 1000
+    }
+  ]
+}

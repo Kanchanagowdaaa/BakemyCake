@@ -1,0 +1,13 @@
+.two-column-layout {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.display-info {
+  color:deeppink;
+}

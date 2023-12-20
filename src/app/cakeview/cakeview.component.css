@@ -1,0 +1,39 @@
+.grid-container {
+  margin: 0px;
+  background-color:bisque;
+  
+}
+
+.dashboard-card {
+  min-height: 1000vh;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  bottom:50px;
+  
+
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+.details{
+  color:black;
+  font-size: large;
+
+}
+.price{
+  color:black;
+}
+
+.mat-h1{
+  padding-top: 20px;
+}
+

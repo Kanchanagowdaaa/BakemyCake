@@ -1,0 +1,58 @@
+
+
+.form-container {
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 40%;
+  box-shadow: 0 0 10px rgba(65, 60, 60, 0.1); 
+  border-radius: 5px;
+  background-color: white;
+  padding:30px;
+ 
+}
+
+
+.form-h1{
+    color: rgb(29, 65, 167);
+    font-weight: bold;
+    text-align: center;
+}
+.input-row{
+    display: flex;
+    gap:30px;
+    padding-left: 20px;
+    width: 100%;
+    
+  
+   
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 57%;
+  }
+  
+  #radio{
+    margin-top: 20px;
+  }
+
+
+  .button{
+    margin-left: 30px;
+  }
+  button{
+    width: 150px;
+    margin-right: 20px;
+  }
+  .main{
+    background-color: bisque;
+    height: auto;
+    width:100%;
+    margin-top: -38px;
+    
+  }
+ 

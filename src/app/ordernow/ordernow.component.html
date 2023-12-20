@@ -1,0 +1,75 @@
+<!-- cake.component.html -->
+
+<div class="container">
+    <div class="cake-details">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title style="color:deeppink;margin-top: -10px;">{{ mycake.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/{{ mycake.id }}.jpg" alt="{{ mycake.name }}" width="100%" height="350px">
+        <mat-card-content>
+          <div>
+            <h3 style="color:deeppink;padding-top: 10px;">Price per Kg: ₹{{ mycake.price }}</h3>
+          </div>
+          <h2>Select your cake quantity to be ordered</h2>
+          <div style="display: flex;">
+            
+            <button mat-raised-button color="accent" class="Button" (click)="modified(1)">1kg</button>
+            
+            <button mat-raised-button color="accent"class="Button" (click)="modified(2)">2kg</button>
+            
+            <button mat-raised-button color="accent" class="Button" (click)="modified(3)">3kg</button>
+            
+            <button mat-raised-button color="accent" class="Button" (click)="modified(4)">4kg</button>
+          </div>
+          <div>
+            <h2 style="padding-top: 10px;">Total: ₹{{ total }}</h2>
+          </div>
+          <button mat-raised-button color="accent" style="float:right" (click)="placeCake()">Place Order</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  
+    <!-- <div class="delivery-details">
+      <mat-card>
+        <mat-card-content>
+          <h2>Delivery Address</h2>
+          <div>
+          <mat-form-field style="width:100%">
+            <mat-label>Door no</mat-label>
+            <input matInput>
+          </mat-form-field>
+          </div>
+          <div>
+          <mat-form-field style="width:100%">
+            <mat-label>street</mat-label>
+            <input matInput>
+          </mat-form-field>
+          </div>
+          <div>
+          <mat-form-field style="width: 100%;">
+            <mat-label>city</mat-label>
+            <input matInput>
+          </mat-form-field>
+          </div>
+          <!-- <mat-form-field>
+            <mat-label>Select a Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="selectedDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> -->
+          <!-- <div>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Date</mat-label>
+            <input matInput>
+          </mat-form-field>
+          </div> -->
+
+                  <!-- <button mat-raised-button color="accent" style="float:right" (click)="placeCake()">Add address</button> -->
+
+                  <!-- <button mat-raised-button color="accent" style="float:right" (click)="placeCake()">Place Order</button> -->
+        <!-- </mat-card-content>
+      </mat-card>
+    </div>
+  </div> -->
+  
