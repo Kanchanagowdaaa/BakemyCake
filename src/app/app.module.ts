@@ -28,13 +28,10 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { MatInputModule } from '@angular/material/input';
 import { LogoutComponent } from './logout/logout.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatDialogModule} from '@angular/material/dialog';
-import { OrdernowComponent } from './ordernow/ordernow.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { OrdernowComponent } from './ordernow/ordernow.component'
 import { MyordersComponent } from './myorders/myorders.component';
-
-
-
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -48,8 +45,8 @@ import { MyordersComponent } from './myorders/myorders.component';
     RegisterFormComponent,
     LogoutComponent,
     OrdernowComponent,
-    MyordersComponent,
-    ],
+    MyordersComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -71,7 +68,9 @@ import { MyordersComponent } from './myorders/myorders.component';
     MatButtonModule,
     MatRadioModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
 
   providers: [],

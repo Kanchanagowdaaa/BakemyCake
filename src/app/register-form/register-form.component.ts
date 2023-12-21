@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../userservice.service';
-import { user } from '../model/user';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
@@ -18,21 +18,17 @@ export class RegisterFormComponent {
 
   registerForm = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(2)]],
-    // lastName: [''],
     password: ['', [Validators.required, Validators.pattern(this.passwordPattern)]],
     confirmPassword: ['', [Validators.required, Validators.pattern(this.passwordPattern)]],
-    // gender: [''],
-    // age: [0, [Validators.required, this.checkAge]],
     email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@gmail\.com$")]],
     phone: ['', [Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)]],
     address: this.fb.group({
       street: [''],
       city: [''],
-      // state: [''],
-      // zipCode: ['', [Validators.required, Validators.pattern("[0-9]{6}")]],
-        }),
+
+    }),
     role: ['user'],
-    
+
   }, { validators: this.passwordCheck })
 
 
@@ -77,9 +73,6 @@ export class RegisterFormComponent {
     return this.registerForm.get('confirmPassword');
   }
 
-  // get age() {
-  //   return this.registerForm.get('age');
-  // }
 
   get phone() {
     return this.registerForm.get('phoneNumber');
@@ -90,22 +83,21 @@ export class RegisterFormComponent {
   }
 
   saveUser() {
-    // alert(this.registerForm.get('email')?.value)
     let email = this.registerForm.get('email')?.value?.toString();
     if (email) {
       this.userservice.checkIfUserExists(email).subscribe((data) => {
         if (data.length != 0) {
-              // alert("emailid present")
-              this._snackbar.open('Email id already exists', 'failure', {
-                duration: 5000,
-                panelClass: ['mat-toolbar', 'mat-primary']})
+          this._snackbar.open('Email id already exists', 'failure', {
+            duration: 5000,
+            panelClass: ['mat-toolbar', 'mat-primary']
+          })
         }
         else {
           this.userservice.addUser(this.registerForm.value).subscribe(data => {
             this._snackbar.open('Congrats!! You have submitted the form!!', 'success', {
               duration: 5000,
-              panelClass: ['mat-toolbar', 'mat-primary']})
-            // alert("user added");
+              panelClass: ['mat-toolbar', 'mat-primary']
+            })
           })
         }
       })
@@ -113,14 +105,14 @@ export class RegisterFormComponent {
   }
 
 
-canClose(){
-  if(this.registerForm.dirty){
-  let display=confirm("Changes you have made may not be saved! Please confirm");
-  return display;
-}
-  else{
-  return true;
-}
+  canClose() {
+    if (this.registerForm.dirty) {
+      let display = confirm("Changes you have made may not be saved! Please confirm");
+      return display;
+    }
+    else {
+      return true;
+    }
 
-}
+  }
 }

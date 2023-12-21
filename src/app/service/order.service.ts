@@ -7,14 +7,13 @@ import { order } from '../model/order';
 })
 export class OrderService {
 
-  constructor(private httpClient:HttpClient) { }
-  addOrder(order:any){
-    return this.httpClient.post<order>("http://localhost:3000/order",order);
+  constructor(private httpClient: HttpClient) { }
+  addOrder(order: any) {
+    return this.httpClient.post<order>("http://localhost:3000/order", order);
   }
 
-  getOrder(){
+  getOrder() {
     return this.httpClient.get<order[]>("http://localhost:3000/order");
   }
 
-  
 }

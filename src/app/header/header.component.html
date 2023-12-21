@@ -1,23 +1,25 @@
-
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <mat-divider></mat-divider>
-      <a mat-list-item *ngIf="loginService.isUserLoggedIn||loginService.isAdminLoggedIn">Welcome  {{loginService.username}}!!!!!</a>
+      <a mat-list-item *ngIf="loginService.isUserLoggedIn||loginService.isAdminLoggedIn">Welcome
+        {{loginService.username}}!!!!!</a>
       <mat-divider></mat-divider>
       <mat-divider></mat-divider>
-      <a mat-list-item *ngIf="!loginService.isUserLoggedIn||!loginService.isAdminLoggedIn" routerLink="Register">Register</a>
+      <a mat-list-item *ngIf="!loginService.isUserLoggedIn||!loginService.isAdminLoggedIn"
+        routerLink="Register">Register</a>
       <mat-divider></mat-divider>
       <a mat-list-item *ngIf="!loginService.isUserLoggedIn&&!loginService.isAdminLoggedIn" routerLink="Login">Login</a>
       <mat-divider></mat-divider>
-      <a mat-list-item  *ngIf="loginService.isAdminLoggedIn==true && loginService.isUserLoggedIn==false" routerLink="addCake">Add cake</a>
+      <a mat-list-item *ngIf="loginService.isAdminLoggedIn==true && loginService.isUserLoggedIn==false"
+        routerLink="addCake">Add cake</a>
       <mat-divider></mat-divider>
-      <a mat-list-item  routerLink="viewcake">View cake</a>
+      <a mat-list-item routerLink="viewcake">View cake</a>
       <mat-divider></mat-divider>
       <mat-divider></mat-divider>
-      <a mat-list-item *ngIf="loginService.isAdminLoggedIn==true" routerLink="myorders">My orders</a>
+      <a mat-list-item *ngIf="loginService.isAdminLoggedIn==true && loginService.isUserLoggedIn==false" routerLink="myorders">My orders</a>
       <mat-divider></mat-divider>
       <a mat-list-item *ngIf="loginService.isUserLoggedIn||loginService.isAdminLoggedIn" routerLink="Logout">Logout</a>
       <mat-divider></mat-divider>
@@ -26,7 +28,8 @@
   <mat-sidenav-content>
     <mat-toolbar color="accent">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon"><mat-icon>reorder</mat-icon>{{ (isHandset$ | async) ? 'menu' : 'close' }}</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon"><mat-icon>reorder</mat-icon>{{ (isHandset$ | async) ? 'menu' :
+          'close' }}</mat-icon>
       </button>
       <span>Bake My Cake</span>
     </mat-toolbar>

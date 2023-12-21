@@ -1,9 +1,10 @@
 <div class="center-container">
   <div class="main">
-    <h1 class="form-h1" style="text-align: center; color:palevioletred" >Login Here</h1>
+    <h1 class="form-h1" style="text-align: center; color:palevioletred">Login Here</h1>
     <form (ngSubmit)="login()" #loginForm="ngForm">
       <mat-form-field class="form-field">
-        <input matInput placeholder="Email id" #email="ngModel" type="email" name="email" [(ngModel)]="user.email" required email>
+        <input matInput placeholder="Email id" #email="ngModel" type="email" name="email" [(ngModel)]="user.email"
+          required email>
         <mat-error *ngIf="email.errors?.['required']">
           email id is required
         </mat-error>
@@ -11,9 +12,10 @@
           enter valid email id
         </mat-error>
       </mat-form-field>
-      
+
       <mat-form-field class="form-field">
-        <input matInput placeholder="Password" #password="ngModel" type="password" name="email" [(ngModel)]="user.password" required password>
+        <input matInput placeholder="Password" #password="ngModel" type="password" name="email"
+          [(ngModel)]="user.password" required password>
         <mat-error *ngIf="password.errors?.['required']">
           password is required
         </mat-error>
@@ -21,9 +23,10 @@
           password is required
         </mat-error>
       </mat-form-field>
-      
+
       <div class="buttons">
-        <button Mat-Button type="submit" color="primary" class="button-submit" [disabled]="loginForm.invalid" mat-raised-button>Submit</button>
+        <button Mat-Button type="submit" color="primary" class="button-submit" [disabled]="loginForm.invalid"
+          mat-raised-button>Submit</button>
         <button Mat-Button color="accent" mat-raised-button type="reset" class="button-reset">Reset</button>
       </div>
     </form>

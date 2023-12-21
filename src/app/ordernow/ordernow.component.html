@@ -1,75 +1,58 @@
-<!-- cake.component.html -->
+<mat-card class="card">
+  <mat-card-content>
+    <div class="Order">
+      <div class="cake-details">
+        <img src="../../assets/{{ mycake.id }}.jpg" style="width:100%;height:50%">
+        <div>
+          <h2 style="color: deeppink;">Cake: {{ mycake.name }}</h2>
+        </div>
+        <div>
+          <h3>Price: ₹{{ mycake.price }}</h3>
+        </div>
+        <h2>Select your cake quantity to be ordered</h2>
+        <div class="quantity-buttons">
+          <button mat-raised-button color="accent" class="Button" (click)="modified(1)">1kg</button>
+          <button mat-raised-button color="accent" class="Button" (click)="modified(2)">2kg</button>
+          <button mat-raised-button color="accent" class="Button" (click)="modified(3)">3kg</button>
+          <button mat-raised-button color="accent" class="Button" (click)="modified(4)">4kg</button>
+        </div>
+        <div>
+          <h2 style="padding-top: 10px;">Total: ₹{{ total }}</h2>
+        </div>
 
-<div class="container">
-    <div class="cake-details">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title style="color:deeppink;margin-top: -10px;">{{ mycake.name }}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="../../assets/{{ mycake.id }}.jpg" alt="{{ mycake.name }}" width="100%" height="350px">
-        <mat-card-content>
+        <mat-form-field class="full-width">
+          <input matInput [(ngModel)]="myorder.orderDate" [matDatepicker]="picker" placeholder="Order Date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Message</mat-label>
+          <input matInput #message maxlength="250" type="text" name="message" [(ngModel)]="myorder.message">
+        </mat-form-field>
+      </div>
+
+      <div class="customer-details">
+        <form class="example-form">
+          <h2>Customer Details</h2>
+
+          <mat-form-field class="example-full-width" style="width:100%">
+            <mat-label>First name</mat-label>
+            <input matInput type="text" name="firstname" [(ngModel)]="myorder.name">
+          </mat-form-field>
           <div>
-            <h3 style="color:deeppink;padding-top: 10px;">Price per Kg: ₹{{ mycake.price }}</h3>
-          </div>
-          <h2>Select your cake quantity to be ordered</h2>
-          <div style="display: flex;">
-            
-            <button mat-raised-button color="accent" class="Button" (click)="modified(1)">1kg</button>
-            
-            <button mat-raised-button color="accent"class="Button" (click)="modified(2)">2kg</button>
-            
-            <button mat-raised-button color="accent" class="Button" (click)="modified(3)">3kg</button>
-            
-            <button mat-raised-button color="accent" class="Button" (click)="modified(4)">4kg</button>
+            <mat-form-field class="example-full-width" style="width:100%">
+              <mat-label>Address</mat-label>
+              <textarea matInput placeholder="Enter the address" type="text" name="address"
+                [(ngModel)]="myorder.address"></textarea>
+            </mat-form-field>
           </div>
           <div>
-            <h2 style="padding-top: 10px;">Total: ₹{{ total }}</h2>
+            <button mat-raised-button color="primary" routerLink="viewcake"
+              style="background-color:deeppink;float: right;" (click)="placeOrder()">Place Order</button>
           </div>
-          <button mat-raised-button color="accent" style="float:right" (click)="placeCake()">Place Order</button>
-        </mat-card-content>
-      </mat-card>
+        </form>
+      </div>
     </div>
-  
-    <!-- <div class="delivery-details">
-      <mat-card>
-        <mat-card-content>
-          <h2>Delivery Address</h2>
-          <div>
-          <mat-form-field style="width:100%">
-            <mat-label>Door no</mat-label>
-            <input matInput>
-          </mat-form-field>
-          </div>
-          <div>
-          <mat-form-field style="width:100%">
-            <mat-label>street</mat-label>
-            <input matInput>
-          </mat-form-field>
-          </div>
-          <div>
-          <mat-form-field style="width: 100%;">
-            <mat-label>city</mat-label>
-            <input matInput>
-          </mat-form-field>
-          </div>
-          <!-- <mat-form-field>
-            <mat-label>Select a Date</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="selectedDate">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field> -->
-          <!-- <div>
-          <mat-form-field style="width: 100%;">
-            <mat-label>Date</mat-label>
-            <input matInput>
-          </mat-form-field>
-          </div> -->
-
-                  <!-- <button mat-raised-button color="accent" style="float:right" (click)="placeCake()">Add address</button> -->
-
-                  <!-- <button mat-raised-button color="accent" style="float:right" (click)="placeCake()">Place Order</button> -->
-        <!-- </mat-card-content>
-      </mat-card>
-    </div>
-  </div> -->
-  
+  </mat-card-content>
+</mat-card>

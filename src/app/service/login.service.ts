@@ -5,37 +5,30 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  isAdminLoggedIn:boolean=false
-  isUserLoggedIn:boolean=false
-  username:string=""
-  role:string=""
-  email: string | undefined;
-  name:string="";
-  id:number | undefined;
-  price:number | undefined;
-
-
+  isAdminLoggedIn: boolean = false
+  isUserLoggedIn: boolean = false
+  username: string = ""
+  role: string = ""
+  email: string = ""
   constructor() { }
-
-  canLogin(data:any)
- {
-
-  if(data[0].role=="user")
-  this.isUserLoggedIn=true;
-  else
-  this.isAdminLoggedIn=true;
-  this.username=data[0].username;
-  this.role=data[0].role;
-  sessionStorage.setItem('email',data[0].email);
-
+  canLogIn(data: any) {
+    if (data[0].role == "user") {
+      this.isUserLoggedIn = true;
+      this.username = data[0].firstName;
+      this.email = data[0].email;
+    }
+    else {
+      this.isAdminLoggedIn = true;
+      this.username = data[0].firstName;
+      this.role = data[0].role;
+      this.email = data[0].email;
+    }
   }
-
-  canLogout()
-  {
-  this.isAdminLoggedIn=false
-  this.isUserLoggedIn=false
-  this.username=""
-  this.role=""
-  sessionStorage.clear();
+  canLogOut() {
+    this.isAdminLoggedIn = false
+    this.isUserLoggedIn = false
+    this.username = ""
+    this.role = ""
+    this.email = ""
   }
 }

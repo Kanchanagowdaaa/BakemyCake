@@ -6,10 +6,12 @@ import { ActivatedRoute } from '@angular/router';
 import { DbserviceService } from '../dbservice.service';
 import { OrderService } from '../service/order.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {Router} from'@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { UserService } from '../userservice.service';
+
 
 
 @Component({
@@ -18,84 +20,123 @@ import { MatNativeDateModule } from '@angular/material/core';
   styleUrl: './ordernow.component.css'
 })
 export class OrdernowComponent implements OnInit {
-orderDate: any;
 
-
-  
-constructor(public ls:LoginService,private rs:ActivatedRoute,private dbserv:DbserviceService,private order:OrderService,private _snackbar:MatSnackBar,private r:Router,private fb: FormBuilder){}
-
-
-
-
-requiredQuantity=1
-total=0
-mycake:cake={}
-
-    ngOnInit(): void {
-
-      
-      this.rs.paramMap.subscribe(params=>{
-        let cakeid=params.get("id") ?? 0;
-      this.getOneCake(cakeid);
-      })
-    }
-  
-    getOneCake(id:any){
-      this.dbserv.getcakeById(id).subscribe((data)=>{
-        this.mycake=data;
-      })
-    }
-
-
-choice: string = ''; 
-
-
-choicee(choice: string): void {
-  this.choice = choice;
-}
-
-
-modified(quantity: number) {
-this.requiredQuantity = quantity;
-this.calculationOfTotalAmount();
-}
-
-
-calculationOfTotalAmount() {
-
-  if (this.mycake && this.mycake.price !== undefined) {
-    this.total = this.mycake.price * this.requiredQuantity 
-  } else {
-    
-    this.total = 0;
+  modified(quantity: number) {
+    this.requiredQuantity = quantity;
+    this.calculateTotalPrice();
   }
-}
 
-placeCake() {
-  let placeOrder: order = {
-    email: this.ls.email,
-    username: this.ls.username,
-    name: this.mycake.name,
-    id: this.mycake.id,
-    price: this.mycake.price,
-    quantity: this.requiredQuantity,
-    total: this.total,
-    orderDate: this.orderDate,
-    // address: {
-    //   doorNo: undefined,
-    //   street: undefined,
-    //   city: undefined
-    // }
+
+  myorder: order = {
+    id: 0,
+    email: '',
+    cakeName: '',
+    price: 0,
+    quantity: 1,
+    username: '',
+    total: 0,
+    orderDate: '',
+    message: '',
+    name: '',
+    address: '',
+
+
   };
-this.order.addOrder(placeOrder).subscribe((data)=>
-this.mycake==data)
-this._snackbar.open('Your order has been placed successfully,,Thank You', 'success', {
-  duration: 5000,
-  panelClass: ['mat-toolbar', 'mat-primary']})
-  // this.r.navigate(['viewcake']);
+  mycake: cake = {
+    id: 0,
+    name: '',
+    price: 0,
+    address: ''
+  };
 
+  myuser: any = {
+    username: '',
+    email: ''
+  };
+  orderDate: string = ""
 
-}
+  constructor(
+    private dbservice: DbserviceService,
+    private activateRoute: ActivatedRoute,
+    private snackBar: MatSnackBar,
+    private orderService: OrderService,
+    private loginService: LoginService,
+    private userservice: UserService,
+    private r: Router
+  ) { }
+  total = 0
+  requiredQuantity = 0
 
+  ngOnInit(): void {
+    this.activateRoute.paramMap.subscribe(params => {
+      let cakeId = params.get("id") ?? 0;
+      this.getOneCake(cakeId);
+      this.calculateTotalPrice();
+    });
+  }
+
+  calculateTotalPrice() {
+    this.myorder.quantity = this.requiredQuantity;
+
+    if (this.mycake && this.mycake.price !== undefined) {
+      this.total = this.mycake.price * this.requiredQuantity;
+      this.myorder.total = this.total;
+    } else {
+      this.total = 0;
+      this.myorder.total = 0;
+    }
+  }
+
+  getOneCake(id: any): void {
+    this.dbservice.getcakeById(id).subscribe((data) => {
+      this.mycake = data;
+      this.calculateTotalPrice();
+    });
+  }
+
+  async placeOrder() {
+    await this.userservice.checkIfUserExists(this.loginService.email).subscribe((data) => {
+      this.myuser = data;
+    })
+
+    if (this.myorder.id) {
+      await this.dbservice.getcakeById(this.myorder.id).subscribe((data) => {
+        this.mycake = data
+      })
+    }
+    let order: order = {
+      email: this.loginService.email,
+      username: this.loginService.username,
+      cakeName: this.mycake.name,
+      price: this.mycake.price,
+      id: this.mycake.id,
+      quantity: this.myorder.quantity,
+      total: this.mycake.total,
+      name: this.myorder.name,
+      address: this.myorder.address,
+      message: this.myorder.message,
+
+      orderDate: this.myorder.orderDate
+    };
+
+    this.orderService.addOrder(order).subscribe(
+      () => {
+        this.snackBar.open('Order placed successfully', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: "bottom"
+
+        });
+        this.r.navigate(['viewcake']);
+      },
+      (error) => {
+        this.snackBar.open('Error placing order', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom'
+        });
+      }
+    );
+  }
 
 }

@@ -1,45 +1,41 @@
 <div class="grid-container">
-  <h1 class="mat-h1" >Welcome to the world of cakes!!!!</h1>
+  <h1 class="mat-h1">Welcome to the world of cakes!!!!</h1>
   <div style="display: flex; justify-content: center;">
-  <mat-form-field appearance="fill">
-    <mat-label>Search Text</mat-label>
-    
-    <input matInput placeholder=""  [(ngModel)]="filterText" (mouseenter)="filter()  ">
-       
-    
+    <mat-form-field appearance="fill">
+      <mat-label>Search Text</mat-label>
+      <input matInput placeholder="" [(ngModel)]="searchText" (mouseenter)="search()  ">
     </mat-form-field>
-    <button mat-stroked-button color="primary" style="height: 56px; background-color:papayawhip">Search</button> 
+    <button mat-stroked-button color="primary" style="height: 56px; background-color:papayawhip">Search</button>
   </div>
   <mat-grid-list cols="4" rowHeight="350px">
-          <mat-grid-tile *ngFor="let cake  of cakedata">
-        <mat-card class="dashboard-card">
-          <mat-card-header>
-            <mat-card-title style="color:#E91E63">
-              {{cake.name}}
-              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu" style="color:black">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <a routerLink="viewDetails/{{cake.id}}" mat-menu-item>View Details<mat-icon> call_made</mat-icon></a>
-                <a routerLink="editDetails/{{cake.id}}" mat-menu-item>Edit Details<mat-icon>edit</mat-icon></a>
-                <a routerLink="deleteCake/{{cake.id}}" mat-menu-item>Delete Details<mat-icon>remove_circle</mat-icon></a>
-              </mat-menu>
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="dashboard-card-content">
+    <mat-grid-tile *ngFor="let cake  of cakedata">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title style="color:#E91E63">
+            {{cake.name}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu"
+              style="color:black">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <a routerLink="viewDetails/{{cake.id}}" mat-menu-item>View Details<mat-icon> call_made</mat-icon></a>
+              <a routerLink="editDetails/{{cake.id}}" mat-menu-item>Edit Details<mat-icon>edit</mat-icon></a>
+              <a routerLink="deleteCake/{{cake.id}}" mat-menu-item>Delete Details<mat-icon>remove_circle</mat-icon></a>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
           <img src="../../assets/{{cake.id}}.jpg" width="100%" height="65%">
-          <!-- <button  color="accent" style="margin-left:280px;" routerLink="ordercake/{{cake.id}}">Order cake</button> -->
             <div class="details">
             {{cake.description}}
-           
+          </div>
+          <div class="price">
+            ₹{{cake.price}}
             </div>
-            <div class="price">
-              ₹{{cake.price}}
-              <!-- <button  color="accent" style="margin-left:280px;" routerLink="ordercake/{{cake.id}}">Order cake</button> -->
-            </div>
-            <button mat-raised-button color="accent" *ngIf="ls.isAdminLoggedIn==false" color="accent" routerLink="ordercake/{{cake.id}}">Buy Now</button>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
+          <button mat-raised-button color="accent" [disabled]="!ls.isUserLoggedIn"  color="accent"
+            routerLink="ordercake/{{cake.id}}">Buy Now</button>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
 </div>

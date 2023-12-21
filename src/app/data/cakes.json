@@ -1,34 +1,46 @@
 {
   "cakes": [
     {
-      "name": "Black Forest",
+      "name": "Chocolate Cake",
       "description": "Available",
-      "price": 800,
+      "price": 500,
       "id": 1
     },
     {
       "name": "Pine apple",
-      "description": "Pine apple",
-      "price": 1000,
+      "description": "Available",
+      "price": 600,
       "id": 2
     },
     {
-      "name": "Rainbow",
+      "name": "Red velvet",
       "description": "Available",
-      "price": 500,
+      "price": 850,
       "id": 3
     },
     {
       "name": "Chocolate fudge",
-      "description": "Chocolate fudge",
-      "price": 500,
+      "description": "Available",
+      "price": 600,
       "id": 4
     },
     {
-      "name": "Strawberry",
+      "name": "Chocolate Truffle",
+      "description": "Available",
+      "price": 750,
+      "id": 5
+    },
+    {
+      "name": "Dark Chocolate",
+      "description": "Available",
+      "price": 520,
+      "id": 6
+    },
+    {
+      "name": "Choco delicious",
       "description": "Available",
       "price": 850,
-      "id": 5
+      "id": 7
     }
   ],
   "user": [
@@ -236,46 +248,5 @@
       "id": 14
     }
   ],
-  "order": [
-    {
-      "username": "Abhi",
-      "name": "Rainbow",
-      "id": 3,
-      "price": 500,
-      "quantity": 1,
-      "total": 500
-    },
-    {
-      "username": "Abhi",
-      "name": "Chocolate fudge",
-      "id": 4,
-      "price": 500,
-      "quantity": 2,
-      "total": 1000
-    },
-    {
-      "username": "Kanchana",
-      "name": "Strawberry",
-      "id": 5,
-      "price": 850,
-      "quantity": 2,
-      "total": 1700
-    },
-    {
-      "username": "Abhi",
-      "name": "Black Forest",
-      "id": 1,
-      "price": 800,
-      "quantity": 1,
-      "total": 800
-    },
-    {
-      "username": "Kanchana",
-      "name": "Pine apple",
-      "id": 2,
-      "price": 1000,
-      "quantity": 1,
-      "total": 1000
-    }
-  ]
+  "order": []
 }

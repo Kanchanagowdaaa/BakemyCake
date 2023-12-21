@@ -13,33 +13,36 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class AddsComponent implements OnInit {
 
- 
-  
-  mycake: cake = {};
+
+
+  mycake: cake = {
+    address: undefined
+  };
 
 
 
   isEditCake: boolean = false;
- 
 
-  
-  constructor(private dbserv: DbserviceService, private roter: Router, private rs: ActivatedRoute,private fb:FormBuilder,private _snackbar:MatSnackBar) { }
-  cakeForm=this.fb.group({
-    id:[0],
-    name:[''],
-    description:[''],
-    price:[0],
-  
-   })
 
-  
+
+  constructor(private dbserv: DbserviceService, private roter: Router, private rs: ActivatedRoute, private fb: FormBuilder, private _snackbar: MatSnackBar) { }
+  cakeForm = this.fb.group({
+    id: [0],
+    name: [''],
+    description: [''],
+    price: [0],
+
+  })
+
+
   addCake() {
     if (this.isEditCake) {
       this.dbserv.editCake(this.mycake).subscribe((data) => {
         this._snackbar.open('You have edited the cake!!', 'success', {
           duration: 5000,
-          panelClass: ['mat-toolbar', 'mat-primary']})
-        
+          panelClass: ['mat-toolbar', 'mat-primary']
+        })
+
         this.roter.navigateByUrl("viewcake")
       })
     }
@@ -48,16 +51,17 @@ export class AddsComponent implements OnInit {
       this.dbserv.addCake(this.mycake).subscribe((data) => {
         this._snackbar.open('You have added the cake!!!!', 'success', {
           duration: 5000,
-          panelClass: ['mat-toolbar', 'mat-primary']})
-      
+          panelClass: ['mat-toolbar', 'mat-primary']
+        })
+
         this.roter.navigateByUrl("viewcake")
       })
     }
   }
 
-    ngOnInit(): void {
-    
-       this.rs.paramMap.subscribe(params => {
+  ngOnInit(): void {
+
+    this.rs.paramMap.subscribe(params => {
       let cakeid = params.get("id") ?? 0;
       this.getOneCake(cakeid);
     })
@@ -71,15 +75,15 @@ export class AddsComponent implements OnInit {
   }
 
 
-  canClose(){
-    if(this.cakeForm.dirty){
-    let display=confirm("Changes you have made may not be saved! Please confirm");
-    return display;
-  }
-    else{
-    return true;
-  }
-  
+  canClose() {
+    if (this.cakeForm.dirty) {
+      let display = confirm("Changes you have made may not be saved! Please confirm");
+      return display;
+    }
+    else {
+      return true;
+    }
+
   }
 }
 
@@ -89,7 +93,7 @@ export class AddsComponent implements OnInit {
 
 
 
-  
-  
+
+
 
 
