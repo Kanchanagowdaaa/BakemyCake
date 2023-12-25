@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import { UserService } from '../userservice.service';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -17,7 +17,7 @@ export class RegisterFormComponent {
   passwordPattern: any = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   registerForm = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(2)]],
+    username: ['', [Validators.required, Validators.minLength(2)],Validators.pattern('^[a-zA-Z]+$')],
     password: ['', [Validators.required, Validators.pattern(this.passwordPattern)]],
     confirmPassword: ['', [Validators.required, Validators.pattern(this.passwordPattern)]],
     email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@gmail\.com$")]],

@@ -32,6 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { OrdernowComponent } from './ordernow/ordernow.component'
 import { MyordersComponent } from './myorders/myorders.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DatePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +72,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatSnackBarModule,
     MatInputModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    DatePipe
   ],
 
   providers: [],

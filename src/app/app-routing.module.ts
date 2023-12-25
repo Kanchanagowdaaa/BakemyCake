@@ -10,6 +10,8 @@ import { adminguardGuard } from './adminguard.guard';
 import { closingGuard } from './closing.guard';
 import { OrdernowComponent } from './ordernow/ordernow.component';
 import { MyordersComponent } from './myorders/myorders.component';
+import { userguardGuard } from './userguard.guard';
+
 
 
 const routes: Routes = [{
@@ -60,7 +62,9 @@ const routes: Routes = [{
 },
 {
   path: "myorders",
-  component: MyordersComponent
+  component: MyordersComponent,
+  
+  
 },
 
 {

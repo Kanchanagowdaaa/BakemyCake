@@ -8,6 +8,7 @@
           <input matInput formControlName="username">
           <mat-error *ngIf="username?.errors?.['required']">First Name Is Mandatory </mat-error>
           <mat-error *ngIf="username?.errors?.['minlength']">First Name min length 2 </mat-error>
+          <mat-error *ngIf="username?.errors?.['pattern']">Username must contain only alphabetic characters</mat-error>
         </mat-form-field>
       </div>
 

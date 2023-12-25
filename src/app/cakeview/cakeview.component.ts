@@ -19,6 +19,7 @@ export class cakeviewComponent implements OnInit {
   }
   cakedata: cake[] = [];
   searchText: string = ''
+  
   constructor(private dbservice: DbserviceService, private ar: ActivatedRoute, private router: Router, public ls: LoginService) {
 
   }
@@ -46,13 +47,14 @@ export class cakeviewComponent implements OnInit {
     })
   }
   search() {
-    if(this.searchText!=""){
-      this.cakedata=this.cakedata.filter(x=>x.name==this.searchText)
-    }
-    else{
+    if (this.searchText !== "") {
+      const searchTerm = this.searchText.toLowerCase();
+      this.cakedata = this.cakedata.filter(x => x?.name?.toLowerCase().includes(searchTerm));
+    } else {
       this.getAllCakes();
     }
   }
+  
 
 }
 

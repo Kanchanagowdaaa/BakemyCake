@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UserService } from '../userservice.service';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -66,6 +67,7 @@ export class OrdernowComponent implements OnInit {
   ) { }
   total = 0
   requiredQuantity = 0
+  minDate: Date = new Date();
 
   ngOnInit(): void {
     this.activateRoute.paramMap.subscribe(params => {

@@ -6,7 +6,7 @@ import { LoginService } from './service/login.service';
 
 @Injectable({providedIn:'root'})
 
-export class adminguardGuard implements CanActivate{
+export class userguardGuard implements CanActivate{
   constructor(private loginService:LoginService,private router:Router){}
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> 
   {

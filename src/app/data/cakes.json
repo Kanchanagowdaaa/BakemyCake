@@ -1,8 +1,8 @@
 {
   "cakes": [
     {
-      "name": "Chocolate Cake",
-      "description": "Available",
+      "name": "Chocolate ",
+      "description": "Chocolate fudge",
       "price": 500,
       "id": 1
     },
@@ -41,6 +41,12 @@
       "description": "Available",
       "price": 850,
       "id": 7
+    },
+    {
+      "name": "Choco delicious",
+      "description": "Available",
+      "price": 850,
+      "id": 8
     }
   ],
   "user": [
@@ -246,7 +252,78 @@
       },
       "role": "user",
       "id": 14
+    },
+    {
+      "username": "Sahana",
+      "password": "Sahana@123",
+      "confirmPassword": "Sahana@123",
+      "email": "Sahana@gmail.com",
+      "phone": "9738416898",
+      "address": {
+        "street": "Mysore",
+        "city": "Karanataka"
+      },
+      "role": "user",
+      "id": 15
+    },
+    {
+      "username": "123",
+      "password": "Akash@123",
+      "confirmPassword": "Akash@123",
+      "email": "Akash@gmail.com",
+      "phone": "9738416898",
+      "address": {
+        "street": "Mysore",
+        "city": "Bangalore"
+      },
+      "role": "user",
+      "id": 16
     }
   ],
-  "order": []
+  "order": [
+    {
+      "email": "abhi@gmail.com",
+      "cakeName": "Chocolate Cake",
+      "price": 500,
+      "id": 1,
+      "quantity": 1,
+      "name": "Abhi",
+      "address": "Mysore",
+      "message": "Happy birthday",
+      "orderDate": "2023-12-18T18:30:00.000Z"
+    },
+    {
+      "email": "abhi@gmail.com",
+      "cakeName": "Chocolate fudge",
+      "price": 600,
+      "id": 4,
+      "quantity": 1,
+      "name": "Abhishek",
+      "address": "Shimoga",
+      "message": "Anniversary",
+      "orderDate": "2023-12-12T18:30:00.000Z"
+    },
+    {
+      "email": "Sahana@gmail.com",
+      "cakeName": "Pine apple",
+      "price": 600,
+      "id": 2,
+      "quantity": 1,
+      "name": "Sahana",
+      "address": "Mysore",
+      "message": "Happy Birthady",
+      "orderDate": "2023-12-19T18:30:00.000Z"
+    },
+    {
+      "email": "kanchana.m.193@gmail.com",
+      "cakeName": "Choco delicious",
+      "price": 850,
+      "id": 8,
+      "quantity": 2,
+      "name": "Sahana",
+      "address": "Mysore",
+      "message": "Happy Birthday",
+      "orderDate": "2023-12-25T18:30:00.000Z"
+    }
+  ]
 }

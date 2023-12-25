@@ -12,18 +12,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class AddsComponent implements OnInit {
-
-
-
   mycake: cake = {
     address: undefined
   };
-
-
-
   isEditCake: boolean = false;
-
-
 
   constructor(private dbserv: DbserviceService, private roter: Router, private rs: ActivatedRoute, private fb: FormBuilder, private _snackbar: MatSnackBar) { }
   cakeForm = this.fb.group({
