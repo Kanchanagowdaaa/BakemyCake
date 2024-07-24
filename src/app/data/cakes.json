@@ -1,8 +1,8 @@
 {
   "cakes": [
     {
-      "name": "Chocolate ",
-      "description": "Chocolate fudge",
+      "name": "Butter",
+      "description": "Available",
       "price": 500,
       "id": 1
     },
@@ -278,52 +278,43 @@
       },
       "role": "user",
       "id": 16
+    },
+    {
+      "username": "Chaithraa",
+      "password": "Chaithra@123",
+      "confirmPassword": "Chaithra@123",
+      "email": "Chaithra@gmail.com",
+      "phone": "9738416898",
+      "address": {
+        "street": "Ramnagar",
+        "city": "Bangalore"
+      },
+      "role": "user",
+      "id": 17
     }
   ],
   "order": [
     {
       "email": "abhi@gmail.com",
-      "cakeName": "Chocolate Cake",
+      "cakeName": "Chocolate ",
       "price": 500,
       "id": 1,
       "quantity": 1,
-      "name": "Abhi",
-      "address": "Mysore",
-      "message": "Happy birthday",
-      "orderDate": "2023-12-18T18:30:00.000Z"
+      "name": "abhishek",
+      "address": "Sathgalli",
+      "message": "happy birthday",
+      "orderDate": "2024-02-15T18:30:00.000Z"
     },
     {
-      "email": "abhi@gmail.com",
-      "cakeName": "Chocolate fudge",
-      "price": 600,
-      "id": 4,
-      "quantity": 1,
-      "name": "Abhishek",
-      "address": "Shimoga",
-      "message": "Anniversary",
-      "orderDate": "2023-12-12T18:30:00.000Z"
-    },
-    {
-      "email": "Sahana@gmail.com",
-      "cakeName": "Pine apple",
-      "price": 600,
-      "id": 2,
-      "quantity": 1,
-      "name": "Sahana",
-      "address": "Mysore",
-      "message": "Happy Birthady",
-      "orderDate": "2023-12-19T18:30:00.000Z"
-    },
-    {
-      "email": "kanchana.m.193@gmail.com",
-      "cakeName": "Choco delicious",
+      "email": "Chaithra@gmail.com",
+      "cakeName": "Red velvet",
       "price": 850,
-      "id": 8,
-      "quantity": 2,
-      "name": "Sahana",
+      "id": 3,
+      "quantity": 1,
+      "name": "Kanchana M",
       "address": "Mysore",
       "message": "Happy Birthday",
-      "orderDate": "2023-12-25T18:30:00.000Z"
+      "orderDate": "2024-03-18T18:30:00.000Z"
     }
   ]
 }
